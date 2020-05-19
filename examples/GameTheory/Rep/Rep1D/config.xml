@@ -1,29 +1,29 @@
 <config>
 <model>
-  <name>Leslie Model, Depth 12</name>
+  <name>1D Replicator, Depth 12</name>
   <desc> This is a description. </desc>
 </model>
 <param>
   <dim> 2 </dim>
   <bounds>
-    <lower> 8.0 3.0 </lower>
-    <upper> 37.0 50.0 </upper>
+    <lower> 5.0 6.0 </lower>
+    <upper> 8.0 9.0 </upper>
   </bounds>
   <subdiv>
     <depth> 6 </depth>
-    <sizes> 64 64 </sizes>
+    <sizes> 64 64  </sizes>
   </subdiv>
 </param>
 <phase>
-  <dim> 2 </dim>
+  <dim> 1 </dim>
   <bounds>
-    <lower> 0.0 0.0 </lower>
-    <upper> 320.056 224.040 </upper>
+    <lower> 0.0 </lower>
+    <upper> 1.0 </upper>
   </bounds>
   <subdiv>
     <init> 0 </init>
-    <min> 24 </min>
-    <max> 28 </max>
+    <min> 14 </min>
+    <max> 16 </max>
     <limit> 10000 </limit>
   </subdiv>
 </phase>

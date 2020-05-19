@@ -1,0 +1,30 @@
+<config>
+<model>
+  <name> Two Player, Three Strategy Replicator Mapping </name>
+  <desc> Discrete Learning Dynamic, Continuation from Binary matrix </desc>
+</model>
+<param>
+  <dim> 2 </dim>
+  <bounds>
+    <lower> 0.0 0.0 </lower>
+    <upper> 1.0 1.0 </upper>
+  </bounds>
+  <subdiv>
+    <depth> 6 </depth>
+    <sizes> 64 64 </sizes>
+  </subdiv>
+</param>
+<phase>
+  <dim> 4 </dim>
+  <bounds>
+    <lower> 0.0 0.0 0.0 0.0 </lower>
+    <upper> 1.0 1.0 1.0 1.0 </upper>
+  </bounds>
+  <subdiv>
+    <init> 5 </init>
+    <min> 16 </min>
+    <max> 20 </max>
+    <limit> 20000 </limit>
+  </subdiv>
+</phase>
+</config>

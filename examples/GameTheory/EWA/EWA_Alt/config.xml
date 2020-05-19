@@ -1,13 +1,13 @@
 <config>
 <model>
-  <name>Leslie Model, Depth 12</name>
-  <desc> This is a description. </desc>
+  <name>Experience Weighted Attraction </name>
+  <desc> Discrete Learning Dynamic. </desc>
 </model>
 <param>
   <dim> 2 </dim>
   <bounds>
-    <lower> 8.0 3.0 </lower>
-    <upper> 37.0 50.0 </upper>
+    <lower> 0.0 0.0 </lower>
+    <upper> 1.0 1.0 </upper>
   </bounds>
   <subdiv>
     <depth> 6 </depth>
@@ -17,13 +17,13 @@
 <phase>
   <dim> 2 </dim>
   <bounds>
-    <lower> 0.0 0.0 </lower>
-    <upper> 320.056 224.040 </upper>
+    <lower> 0.00 0.00 </lower>
+    <upper> 1.00 1.00 </upper>
   </bounds>
   <subdiv>
-    <init> 0 </init>
-    <min> 24 </min>
-    <max> 28 </max>
+    <init> 10 </init>
+    <min> 18 </min>
+    <max> 20 </max>
     <limit> 10000 </limit>
   </subdiv>
 </phase>

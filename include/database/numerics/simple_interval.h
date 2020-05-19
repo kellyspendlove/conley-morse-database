@@ -143,7 +143,7 @@ template < class Real >
 simple_interval<Real> log ( const simple_interval<Real> & term ) {
   simple_interval<Real> result;
   result . lower_ = std::log ( term . lower_ );
-  result . upper_ = std::exp ( term . upper_ );
+  result . upper_ = std::log ( term . upper_ );
   return result;
 } 
 

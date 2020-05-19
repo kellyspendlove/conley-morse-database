@@ -1,0 +1,30 @@
+<config>
+<model>
+  <name>Experience Weighted Attraction </name>
+  <desc> Discrete Learning Dynamic. </desc>
+</model>
+<param>
+  <dim> 2 </dim>
+  <bounds>
+    <lower> 0.0 0.0 </lower>
+    <upper> 1.0 1.0 </upper>
+  </bounds>
+  <subdiv>
+    <depth> 6 </depth>
+    <sizes> 64 64 </sizes>
+  </subdiv>
+</param>
+<phase>
+  <dim> 4 </dim>
+  <bounds>
+    <lower> 0.00 0.00 0.00 0.00 </lower>
+    <upper> 1.00 1.00 1.00 1.00 </upper>
+  </bounds>
+  <subdiv>
+    <init> 10 </init>
+    <min> 10 </min>
+    <max> 10 </max>
+    <limit> 10000 </limit>
+  </subdiv>
+</phase>
+</config>

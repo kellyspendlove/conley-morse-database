@@ -1,13 +1,13 @@
 <config>
 <model>
-  <name>Leslie Model, Depth 12</name>
+  <name> MWU Update </name>
   <desc> This is a description. </desc>
 </model>
 <param>
   <dim> 2 </dim>
   <bounds>
-    <lower> 8.0 3.0 </lower>
-    <upper> 37.0 50.0 </upper>
+    <lower> 4.0 0.5 </lower>
+    <upper> 50.0 0.8 </upper>
   </bounds>
   <subdiv>
     <depth> 6 </depth>
@@ -15,15 +15,15 @@
   </subdiv>
 </param>
 <phase>
-  <dim> 2 </dim>
+  <dim> 1 </dim>
   <bounds>
-    <lower> 0.0 0.0 </lower>
-    <upper> 320.056 224.040 </upper>
+    <lower> 0.00 </lower>
+    <upper> 1.00 </upper>
   </bounds>
   <subdiv>
-    <init> 0 </init>
-    <min> 24 </min>
-    <max> 28 </max>
+    <init> 15 </init>
+    <min> 24  </min>
+    <max> 26 </max>
     <limit> 10000 </limit>
   </subdiv>
 </phase>

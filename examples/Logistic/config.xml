@@ -1,0 +1,30 @@
+<config>
+<model>
+  <name> MWU Update </name>
+  <desc> This is a description. </desc>
+</model>
+<param>
+  <dim> 1 </dim>
+  <bounds>
+    <lower> 1.0 </lower>
+    <upper> 4.0 </upper>
+  </bounds>
+  <subdiv>
+    <depth> 6 </depth>
+    <sizes> 64 </sizes>
+  </subdiv>
+</param>
+<phase>
+  <dim> 1 </dim>
+  <bounds>
+    <lower> 0.00 </lower>
+    <upper> 1.00 </upper>
+  </bounds>
+  <subdiv>
+    <init> 15 </init>
+    <min> 24  </min>
+    <max> 26 </max>
+    <limit> 10000 </limit>
+  </subdiv>
+</phase>
+</config>
