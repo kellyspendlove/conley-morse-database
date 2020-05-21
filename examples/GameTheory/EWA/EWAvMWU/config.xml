@@ -22,8 +22,8 @@
   </bounds>
   <subdiv>
     <init> 0 </init>
-    <min> 21 </min>
-    <max> 22 </max>
+    <min> 18 </min>
+    <max> 20 </max>
     <limit> 10000 </limit>
   </subdiv>
 </phase>

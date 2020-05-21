@@ -16,13 +16,13 @@ public:
 
 // User interface: method to be provided by user
   // Parameter variables
-  interval c, d;
+  interval c, b;
   
   // Constructor: sets parameter variables
   void assign ( RectGeo const& rectangle ) {
     // Read parameter intervals from input rectangle
     c = getRectangleComponent ( rectangle, 0 );
-    d = getRectangleComponent ( rectangle, 1 );  
+    b = getRectangleComponent ( rectangle, 1 );  
   }
 
   // Map
@@ -36,37 +36,40 @@ public:
     interval a11, a12, a21, a22;
     interval b11, b12, b21, b22;
 
-    double a = 0.18;
-    double b = 1.41;
+    double a = c.lower();
+    //double b = d.lower();
 
     a11 = 1.0;
-    a12 = interval(c.lower(),d.lower());
-    a21 = interval(c.lower(),d.lower());
+    a12 = -1.0;
+    a21 = -1.0;
     a22 = 1.0;
-    b11 = interval(c.lower(),d.lower());
+    b11 = -1.0;
     b12 = 1.0;
     b21 = 1.0;
-    b22 = interval(c.lower(),d.lower());
+    b22 = -1.0;
 
     interval Ay0 = a11*y0+a12*y1;
     interval Ay1 = a21*y0+a22*y1;
-    interval Bx0 = b11*x0+b12*x1;
-    interval Bx1 = b21*x0+b22*x1;
-
-    interval XNum = pow(x0,1.0-a);
-    interval XDenom = XNum + pow(x1,1.0-a)*exp(b*(Ay1-Ay0));
-    interval YNum = pow(y0,1.0-a);
-    interval YDenom = YNum + pow(y1,1.0-a)*exp(b*(Bx1-Bx0));
-
+    //interval Bx0 = b11*x0+b12*x1;
+    //interval Bx1 = b21*x0+b22*x1;
 
     //interval XNum = pow(x0,1.0-a)*exp(b*Ay0);
     //interval XDenom = XNum + pow(x1,1.0-a)*exp(b*Ay1);
+
+    interval XNum = pow(x0,1.0-a);
+    interval XDenom = XNum + pow(x1,1.0-a)*exp(b*(Ay1-Ay0));
+    //Evaluate first player
+    interval fx0 = XNum / XDenom;
+
+    interval fx1 = 1.0 - fx0;
+    interval Bx0 = b11*fx0+b12*fx1;
+    interval Bx1 = b21*fx0+b22*fx1;
     //interval YNum = pow(y0,1.0-a)*exp(b*Bx0);
     //interval YDenom = YNum + pow(y1,1.0-a)*exp(b*Bx1);
-    
-    // Evaluate map
-    interval fx0 = XNum / XDenom; 
-    // (p0 * x0 + p1 * x1 ) * exp ( -0.1 * (x0 + x1) );     
+    interval YNum = pow(y0,1.0-a);
+    interval YDenom = YNum + pow(y1,1.0-a)*exp(b*(Bx1-Bx0));
+
+    // Evaluate second player
     interval fy0 = YNum / YDenom;
     
     // Return result

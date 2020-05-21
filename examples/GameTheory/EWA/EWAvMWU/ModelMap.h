@@ -37,32 +37,28 @@ public:
     interval b11, b12, b21, b22;
 
     double a = 0.18;
+    double a1 = d.lower();
+    double a0 = 0.0;
     double b = 1.41;
 
     a11 = 1.0;
-    a12 = interval(c.lower(),d.lower());
-    a21 = interval(c.lower(),d.lower());
+    a12 = c;
+    a21 = c;
     a22 = 1.0;
-    b11 = interval(c.lower(),d.lower());
+    b11 = c;
     b12 = 1.0;
     b21 = 1.0;
-    b22 = interval(c.lower(),d.lower());
+    b22 = c;
 
     interval Ay0 = a11*y0+a12*y1;
     interval Ay1 = a21*y0+a22*y1;
     interval Bx0 = b11*x0+b12*x1;
     interval Bx1 = b21*x0+b22*x1;
 
-    interval XNum = pow(x0,1.0-a);
-    interval XDenom = XNum + pow(x1,1.0-a)*exp(b*(Ay1-Ay0));
-    interval YNum = pow(y0,1.0-a);
-    interval YDenom = YNum + pow(y1,1.0-a)*exp(b*(Bx1-Bx0));
-
-
-    //interval XNum = pow(x0,1.0-a)*exp(b*Ay0);
-    //interval XDenom = XNum + pow(x1,1.0-a)*exp(b*Ay1);
-    //interval YNum = pow(y0,1.0-a)*exp(b*Bx0);
-    //interval YDenom = YNum + pow(y1,1.0-a)*exp(b*Bx1);
+    interval XNum = pow(x0,1.0-a1)*exp(b*Ay0);
+    interval XDenom = XNum + pow(x1,1.0-a1)*exp(b*Ay1);
+    interval YNum = pow(y0,1.0-a0)*exp(b*Bx0);
+    interval YDenom = YNum + pow(y1,1.0-a0)*exp(b*Bx1);
     
     // Evaluate map
     interval fx0 = XNum / XDenom; 

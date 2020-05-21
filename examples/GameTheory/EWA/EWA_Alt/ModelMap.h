@@ -53,17 +53,22 @@ public:
     //interval Bx0 = b11*x0+b12*x1;
     //interval Bx1 = b21*x0+b22*x1;
 
-    interval XNum = pow(x0,1.0-a)*exp(b*Ay0);
-    interval XDenom = XNum + pow(x1,1.0-a)*exp(b*Ay1);
+    //interval XNum = pow(x0,1.0-a)*exp(b*Ay0);
+    //interval XDenom = XNum + pow(x1,1.0-a)*exp(b*Ay1);
+
+    interval XNum = pow(x0,1.0-a);
+    interval XDenom = XNum + pow(x1,1.0-a)*exp(b*(Ay1-Ay0));
     //Evaluate first player
     interval fx0 = XNum / XDenom;
 
     interval fx1 = 1.0 - fx0;
     interval Bx0 = b11*fx0+b12*fx1;
     interval Bx1 = b21*fx0+b22*fx1;
-    interval YNum = pow(y0,1.0-a)*exp(b*Bx0);
-    interval YDenom = YNum + pow(y1,1.0-a)*exp(b*Bx1);
-    
+    //interval YNum = pow(y0,1.0-a)*exp(b*Bx0);
+    //interval YDenom = YNum + pow(y1,1.0-a)*exp(b*Bx1);
+    interval YNum = pow(y0,1.0-a);
+    interval YDenom = YNum + pow(y1,1.0-a)*exp(b*(Bx1-Bx0));
+
     // Evaluate second player
     interval fy0 = YNum / YDenom;
     
